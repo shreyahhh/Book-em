@@ -1,4 +1,7 @@
-const BASE_URL = '/api/search.json';
+// Use appropriate proxy based on environment
+const BASE_URL = import.meta.env.DEV 
+  ? '/api/search.json'  // Development - uses Vite proxy
+  : '/api/search';  // Production - uses Vercel serverless function
 
 const searchBooks = async (query, searchType = 'title', limit = 20) => {
   try {
@@ -28,13 +31,19 @@ const searchBooks = async (query, searchType = 'title', limit = 20) => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-    const response = await fetch(url, {
+    const fetchOptions = {
       signal: controller.signal,
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'BookFinder/1.0'
       }
-    });
+    };
+
+    // Only add User-Agent in development (some production environments restrict this)
+    if (import.meta.env.DEV) {
+      fetchOptions.headers['User-Agent'] = 'BookFinder/1.0';
+    }
+
+    const response = await fetch(url, fetchOptions);
 
     clearTimeout(timeoutId);
     
@@ -131,7 +140,11 @@ const hydrateBookWithEditions = async (book) => {
   try {
     // Fetch the work details to get editions
     const workUrl = `https://openlibrary.org/works/${book.workKey}.json`;
-    const workResponse = await fetch(workUrl);
+    const workResponse = await fetch(workUrl, {
+      headers: {
+        'Accept': 'application/json',
+      }
+    });
     
     if (!workResponse.ok) {
       console.warn(`Failed to fetch work details for ${book.workKey}`);
@@ -142,7 +155,11 @@ const hydrateBookWithEditions = async (book) => {
     
     // Fetch editions for this work
     const editionsUrl = `https://openlibrary.org/works/${book.workKey}/editions.json?limit=50`;
-    const editionsResponse = await fetch(editionsUrl);
+    const editionsResponse = await fetch(editionsUrl, {
+      headers: {
+        'Accept': 'application/json',
+      }
+    });
     
     if (!editionsResponse.ok) {
       console.warn(`Failed to fetch editions for work ${book.workKey}`);
