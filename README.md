@@ -1,8 +1,8 @@
-# Book'em 📚
+# Book'em
 
 A modern, responsive book finder application that allows users to discover and explore millions of books from the Open Library database. Built with React and featuring a clean, minimalist design with advanced search capabilities and optimized performance.
 
-## 🌟 Overview
+## Overview
 
 Book'em is a comprehensive book discovery platform that provides instant access to one of the world's largest open book databases. The application features intelligent search functionality, detailed book information, and an intuitive user interface designed for book enthusiasts and casual readers alike.
 
@@ -13,7 +13,7 @@ Book'em is a comprehensive book discovery platform that provides instant access 
 - **Responsive Design**: Clean, modern interface optimized for all device sizes
 - **Performance Optimized**: Two-stage API hydration for instant UI response with progressive enhancement
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library with hooks and functional components
@@ -37,7 +37,7 @@ Book'em is a comprehensive book discovery platform that provides instant access 
 - **Background Hydration** - Progressive enhancement of search results
 - **Lazy Loading** - Optimized image loading with intersection observer
 
-## 📁 Project Directory Structure
+## Project Directory Structure
 
 ```
 Book'em/
@@ -72,22 +72,22 @@ Book'em/
 └── README.md                    # Project documentation
 ```
 
-## ✨ Features
+## Features
 
-### 🔍 Advanced Search Capabilities
+### Advanced Search Capabilities
 - **Multi-criteria Search**: Search by title, author, subject, ISBN, or publisher
 - **Real-time Results**: Debounced search with instant feedback
 - **Smart Suggestions**: Quick access buttons for popular searches (Ruskin Bond, Stephen King, etc.)
 - **Auto-search**: Automatic search as you type with optimized API calls
 
-### 📖 Rich Book Information
+### Rich Book Information
 - **Comprehensive Details**: Title, author, publication year, edition count, ISBN, LCCN, OCLC
 - **Book Descriptions**: First sentences and full descriptions when available
 - **Subject Classification**: Categorized topics and genres
 - **Publication Information**: Publishers, languages, page counts
 - **External Links**: Direct links to Open Library and Google search
 
-### 🖼️ Intelligent Cover Loading
+### Intelligent Cover Loading
 - **7-Step Fallback System**: 
   1. Cover ID (fastest, primary method)
   2. Edition Key/OLID (most reliable for website parity)
@@ -100,14 +100,14 @@ Book'em/
 - **Performance Monitoring**: Console logging for cover loading success/failure tracking
 - **Lazy Loading**: Images load only when visible with intersection observer
 
-### 🎨 User Experience
+### User Experience
 - **Clean Design**: Minimalist black/white/grey theme without distractions
 - **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
 - **Loading States**: Elegant skeleton screens and progress indicators
 - **Error Handling**: Graceful error messages with helpful suggestions
 - **Accessibility**: Semantic HTML and keyboard navigation support
 
-### ⚡ Performance Optimizations
+### Performance Optimizations
 - **Two-Stage API Strategy**:
   - Stage 1: Instant UI render with search results
   - Stage 2: Background hydration for enhanced cover availability
@@ -116,7 +116,7 @@ Book'em/
 - **Concurrent Processing**: Batch hydration with controlled concurrency
 - **Caching System**: Smart caching for cover URLs (configurable)
 
-### 🔧 Technical Features
+### Technical Features
 - **Modern React Patterns**: Functional components with hooks
 - **Custom Hook Architecture**: Reusable state management logic
 - **API Integration**: RESTful integration with Open Library
@@ -124,7 +124,7 @@ Book'em/
 - **Build Optimization**: Production-ready builds with Vite
 - **Hot Module Replacement**: Instant updates during development
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -133,8 +133,8 @@ Book'em/
 ### Quick Start
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd Book'em
+git clone https://github.com/shreyahhh/Book-em.git
+cd Book-em
 
 # Install dependencies
 npm install
@@ -152,7 +152,7 @@ npm run preview
 ### Development Server
 The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
-## 🚀 Usage
+## Usage
 
 ### Basic Search
 1. Open the application in your browser
@@ -172,7 +172,7 @@ The application will be available at `http://localhost:5173` (or another port if
 - **Subject Exploration**: Browse books by topics and genres
 - **Cross-referencing**: Multiple identifier types for comprehensive search
 
-## 🔄 API Integration
+## API Integration
 
 ### Open Library Integration
 - **Search Endpoint**: `/search.json` for initial book discovery
@@ -186,15 +186,15 @@ The application will be available at `http://localhost:5173` (or another port if
 - **Fallback Handling**: Multiple cover sources with graceful degradation
 - **Error Recovery**: Comprehensive error handling with user feedback
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Open Library** - Providing free access to millions of books
 - **Internet Archive** - Supporting the open library initiative
