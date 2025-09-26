@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-lazy-load-image-component": "^1.6.3"
   },
   "devDependencies": {
@@ -27,9 +27,6 @@
     "globals": "^16.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
-    "vite": "^5.4.10"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.1.12"
+    "vite": "^6.0.7"
   }
 }

@@ -16,8 +16,8 @@ Book'em is a comprehensive book discovery platform that provides instant access 
 ## Tech Stack
 
 ### Frontend
-- **React 18** - Modern UI library with hooks and functional components
-- **Vite** - Fast build tool and development server
+- **React 19** - Latest UI library with hooks and functional components
+- **Vite 6** - Fast build tool and development server with Rolldown
 - **Tailwind CSS v4** - Utility-first CSS framework with modern styling
 - **React Lazy Load Image Component** - Performance-optimized image loading
 
@@ -151,6 +151,29 @@ npm run preview
 
 ### Development Server
 The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+
+## Deployment
+
+### Deploy to Vercel
+This project is optimized for deployment on Vercel with zero configuration:
+
+1. **Fork/Clone the repository**
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel will automatically detect it as a Vite project
+3. **Deploy**: Click deploy - no additional configuration needed!
+
+The project includes a `vercel.json` file for optimal SPA routing and static asset handling.
+
+### Manual Deployment
+```bash
+# Build the project
+npm run build
+
+# Deploy the dist/ folder to any static hosting provider
+# (Netlify, GitHub Pages, Firebase Hosting, etc.)
+```
 
 ## Usage
 
