@@ -1,6 +1,6 @@
 import BookCard from './BookCard';
 
-const BookList = ({ books, isLoading, error, onBookClick }) => {
+const BookList = ({ books, isLoading, error, onBookClick, hasSearched }) => {
   if (isLoading) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -34,7 +34,8 @@ const BookList = ({ books, isLoading, error, onBookClick }) => {
     );
   }
 
-  if (!books || books.length === 0) {
+  // Only show "No books found" if user has searched and no results were returned
+  if (hasSearched && (!books || books.length === 0)) {
     return (
       <div className="container mx-auto px-4 py-16">
         <div className="bg-white rounded-lg p-8 text-center shadow-sm max-w-lg mx-auto border border-gray-200">
@@ -56,6 +57,11 @@ const BookList = ({ books, isLoading, error, onBookClick }) => {
         </div>
       </div>
     );
+  }
+
+  // If no search has been performed yet, don't render anything (welcome screen will show instead)
+  if (!hasSearched) {
+    return null;
   }
 
   return (
